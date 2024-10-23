@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #myButton {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .big-text {
+            font-size: 30px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button id="myButton">Here</button>
+    <p id="message"></p>
+</div>
+
+<script>
+    let clickCount = 0;
+    const button = document.getElementById('myButton');
+    const message = document.getElementById('message');
+
+    button.addEventListener('click', function() {
+        clickCount++;
+        if (clickCount === 1) {
+            message.textContent = "you’re so shameless, don’t click mf.";
+        } else if (clickCount === 2) {
+            message.textContent = "again? Have some shame. GO AND STUDY, IDIOT. stop clicking.";
+        } else if (clickCount === 3) {
+            message.textContent = "ewww, desperate brat, since you came this far, click again.";
+        } else if (clickCount === 4) {
+            message.innerHTML = '<span class="big-text">JA NA LAWDE🥰</span>';
+            button.disabled = true; // Disable button after fourth click
+        }
+    });
+</script>
+
+</body>
+</html>
